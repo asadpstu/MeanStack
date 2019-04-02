@@ -26,7 +26,7 @@ router.get('/',function(req,res){
     res.send("Api Works");
 });
 
-//Get reruest for all videos
+//Get request for all videos
 router.get('/video',function(req,res){
     console.log("All videos");
     Videos.find({})
@@ -66,7 +66,6 @@ router.post('/video',function(req,res){
 router.get('/video/:id',function(req,res){
     //console.log("All videos");
     var objectid = req.params.id;
-    //console.log(objectid);
     Videos.find({'_id':objectid})
     .exec(function(err,Videos){
         if(err){
@@ -108,7 +107,6 @@ router.put('/video/:id',function(req,res){
 });
 
 // Delete Document
-//Get reruest for all videos
 router.delete('/video/:id',function(req,res){
     var objectid = req.params.id;
     // Find and update has four parameter inside the function
